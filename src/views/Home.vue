@@ -10,7 +10,7 @@ import Order from '@/components/Order.vue';
 export default {
   name: 'home',
   components: {
-    Order
-  }
-}
+    Order,
+  },
+};
 </script>

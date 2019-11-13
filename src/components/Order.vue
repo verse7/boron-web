@@ -19,9 +19,9 @@ import SubOrder from '@/components/SubOrder.vue';
 export default {
   name: 'order',
   components: {
-    SubOrder
-  }
-}
+    SubOrder,
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
