@@ -2,14 +2,15 @@
 
 class SimpleMenu {
 
-    public entrees: string;
-    public sides: string;
+    public entrees: string[];
+    public sides: string[];
 
     constructor(menuObject: any) {
         // super();
         this.entrees = menuObject.entrees;
         this.sides = menuObject.sides;
     }
+
 }
 
 export default SimpleMenu;

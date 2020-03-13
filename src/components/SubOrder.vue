@@ -10,7 +10,9 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
-@Component
+@Component({
+  components: { },
+})
 export default class SubOrder extends Vue {}
 </script>
 

@@ -18,10 +18,38 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Component, Prop, Vue } from "vue-property-decorator";
 import api from '../api';
 import SimpleMenu from '../models/SimpleMenu';
 
+@Component({
+    components: { },
+})
+export default class Menu extends Vue {
+    private vendor: any = {
+        name: 'Social Welfare' as string,
+        email: 'rowaneatkinson' as string,
+    };
+
+    private menu: SimpleMenu = {
+        entrees: [] as string[],
+        sides: [] as string[],
+    };
+
+    public mounted() {
+        const response = api.get('menu', this.vendor.email);
+        // console.log(response);
+        if ( response ) {
+            response
+            .then((data) => {
+                console.log(data);
+                this.menu = new SimpleMenu(data.data);
+            })
+            .catch((error) => console.error(error.message));
+        }
+    }
+}
+/*
 export default Vue.extend({
     data() {
         return {
@@ -45,6 +73,7 @@ export default Vue.extend({
         }
     },
 });
+*/
 </script>
 
 <style scoped>

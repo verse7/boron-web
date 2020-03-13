@@ -16,12 +16,12 @@
 import { Component, Vue } from 'vue-property-decorator';
 import SubOrder from '@/components/SubOrder.vue';
 
-export default {
-  name: 'order',
-  components: {
-    SubOrder,
-  },
-};
+@Component({
+  components: { SubOrder },
+})
+export default class Order extends Vue {
+  private name: string = 'order';
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
